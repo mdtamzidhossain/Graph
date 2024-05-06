@@ -1,0 +1,118 @@
+public class public class UndirectedGraph {
+    private boolean adjMatrix[][];
+    private int numVertices;
+
+    // Constructor
+    public UndirectedGraph(int numVertices) {
+        this.numVertices = numVertices;
+        adjMatrix = new boolean[numVertices][numVertices];
+    }
+
+    // Add an edge between vertices i and j
+    public void addEdge(int i, int j) {
+        if (i >= 0 && i < numVertices && j >= 0 && j < numVertices) {
+            adjMatrix[i][j] = true;
+            adjMatrix[j][i] = true; // For undirected graph, add edge in both directions
+        } else {
+            System.out.println("Invalid vertex indices.");
+        }
+    }
+
+    // Remove the edge between vertices i and j
+    public void removeEdge(int i, int j) {
+        if (i >= 0 && i < numVertices && j >= 0 && j < numVertices) {
+            adjMatrix[i][j] = false;
+            adjMatrix[j][i] = false; // For undirected graph, remove edge in both directions
+        } else {
+            System.out.println("Invalid vertex indices.");
+        }
+    }
+
+    // Print the adjacency matrix
+    @Override
+    public String toString() {
+        StringBuilder s = new StringBuilder();
+        s.append("  ");
+        for (int i = 0; i < numVertices; i++) {
+            s.append(i).append(" ");
+        }
+        s.append("\n");
+        for (int i = 0; i < numVertices; i++) {
+            s.append(i).append(" ");
+            for (int j = 0; j < numVertices; j++) {
+                s.append(adjMatrix[i][j] ? 1 : 0).append(" ");
+            }
+            s.append("\n");
+        }
+        return s.toString();
+    }
+
+    // Main method for testing
+    public static void main(String args[]) {
+        UndirectedGraph g = new UndirectedGraph(4);
+        g.addEdge(0, 1);
+        g.addEdge(0, 2);
+        g.addEdge(1, 2);
+        g.addEdge(2, 3);
+        System.out.println(g);
+    }
+}
+ {
+    private boolean adjMatrix[][];
+    private int numVertices;
+
+    // Constructor
+    public UndirectedGraph(int numVertices) {
+        this.numVertices = numVertices;
+        adjMatrix = new boolean[numVertices][numVertices];
+    }
+
+    // Add an edge between vertices i and j
+    public void addEdge(int i, int j) {
+        if (i >= 0 && i < numVertices && j >= 0 && j < numVertices) {
+            adjMatrix[i][j] = true;
+            adjMatrix[j][i] = true; // For undirected graph, add edge in both directions
+        } else {
+            System.out.println("Invalid vertex indices.");
+        }
+    }
+
+    // Remove the edge between vertices i and j
+    public void removeEdge(int i, int j) {
+        if (i >= 0 && i < numVertices && j >= 0 && j < numVertices) {
+            adjMatrix[i][j] = false;
+            adjMatrix[j][i] = false; // For undirected graph, remove edge in both directions
+        } else {
+            System.out.println("Invalid vertex indices.");
+        }
+    }
+
+    // Print the adjacency matrix
+    @Override
+    public String toString() {
+        StringBuilder s = new StringBuilder();
+        s.append("  ");
+        for (int i = 0; i < numVertices; i++) {
+            s.append(i).append(" ");
+        }
+        s.append("\n");
+        for (int i = 0; i < numVertices; i++) {
+            s.append(i).append(" ");
+            for (int j = 0; j < numVertices; j++) {
+                s.append(adjMatrix[i][j] ? 1 : 0).append(" ");
+            }
+            s.append("\n");
+        }
+        return s.toString();
+    }
+
+    // Main method for testing
+    public static void main(String args[]) {
+        UndirectedGraph g = new UndirectedGraph(4);
+        g.addEdge(0, 1);
+        g.addEdge(0, 2);
+        g.addEdge(1, 2);
+        g.addEdge(2, 3);
+        System.out.println(g);
+    }
+}
