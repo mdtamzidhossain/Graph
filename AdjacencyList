@@ -24,7 +24,6 @@ class Graph {
 
   public static void main(String[] args) {
 
-    // Create the graph
     int V = 5;
     ArrayList<ArrayList<Integer>> am = new ArrayList<ArrayList<Integer>>(V);
 
